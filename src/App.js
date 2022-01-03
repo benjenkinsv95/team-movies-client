@@ -10,6 +10,12 @@ import SignIn from './components/auth/SignIn'
 import SignOut from './components/auth/SignOut'
 import ChangePassword from './components/auth/ChangePassword'
 
+import Home from './components/movies/Home'
+import Movie from './components/movies/Movie'
+import MovieCreate from './components/movies/MovieCreate'
+import MovieEdit from './components/movies/MovieEdit'
+import Movies from './components/movies/Movies'
+
 const App = () => {
   const [user, setUser] = useState(null)
   const [msgAlerts, setMsgAlerts] = useState([])
@@ -57,6 +63,12 @@ const App = () => {
             element={<ChangePassword msgAlert={msgAlert} user={user} /> }
           />
 
+          <Route path='/'
+            element={<Home />} />
+          <Route path='/movies' element={<Movies msgAlert={msgAlert} user={user} />} />
+          <Route path='/movies/:id' element={<Movie msgAlert={msgAlert} user={user} />} />
+          <Route path='/movies/create' element={<MovieCreate msgAlert={msgAlert} user={user} />} />
+          <Route path='/movies/:id/edit' element={<MovieEdit msgAlert={msgAlert} user={user} />} />
         </Routes>
       </main>
     </>

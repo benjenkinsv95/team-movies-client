@@ -1,34 +1,97 @@
 [![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
 
-# react-auth-template
+# React Auth
 
-A front-end framework template for starting projects with a recent version of
-either the [Django API Template](https://git.generalassemb.ly/ga-wdi-boston/django-template)
-or the [Express API Template](https://git.generalassemb.ly/ga-wdi-boston/express-api-template).
+In this lesson, we will learn how to create components for authentication on the front end. The end result, will be similar to the [react-auth-template](https://git.generalassemb.ly/seir-flex-831/react-auth-template) you will be provided for your third and fourth projects.
 
-## Installation
+## Prerequisites
 
-1. [Download](../../archive/main.zip) this template.
-1. Unzip and rename the template directory (`unzip ~/Downloads/react-auth-template-main.zip`).
-1. Move into the new project and `git init`.
-1. Empty [`README.md`](README.md) and fill with your own content.
-1. Replace `react-auth-template` in `package.json` with your
-   projects name.
-2. In the `"homepage"` field of `package.json` replace `git-name` your (public) Github
-   account name and replace `repo-name` with your repository name.
-3. Install dependencies with `npm install`.
-4. `git add` and `git commit` your changes.
-5. Run the development server with `npm start`.
+- [react-hooks](https://git.generalassemb.ly/seir-flex-831/react-hooks)
+- [react-crud](https://git.generalassemb.ly/seir-flex-831/react-crud)
+- [react-styling](https://git.generalassemb.ly/seir-flex-831/react-styling)
 
-## Deployment
 
-Before deploying, you first need to make sure the `homepage` key in your
-`package.json` is pointing to the correct value. It should be the url of your
-deployed application.
+## Objectives
 
-To deploy you should first make sure you are on the `main` branch with a
-clean working directory, then you can run `npm run deploy` and wait to see if
-it runs successfully.
+By the end of this, developers should be able to:
+
+- Create SignUp, SignIn, ChangePassword, and SignOut auth components.
+- Prevent viewing components until the user is signed in.
+- Style components using React Bootstrap.
+- Make axios requests using async & await.
+
+## Preparation
+
+1.  Fork and clone this repository.
+    [FAQ](https://github.com/ga-wdi-boston/meta/wiki/ForkAndClone)
+1.  Create and checkout to a new branch, `training`, for your work.
+1.  Install dependencies with `npm install`.
+1.  Start application with `npm start`.
+
+## Code Along - Choosing a Theme 
+
+To make our application unique, but still look good we will use a color palette.
+
+Explore [these color palettes](https://coolors.co/palettes/trending
+) and choose one you like.
+
+In `index.scss`, set the `$primary`, `$secondary`, and `$info` bootstrap colors to colors from your palette.
+
+Here's an example:
+```scss
+// Add BEFORE Bootstrap is imported
+$primary: #f4a261;
+$secondary: #e9c46a;
+$info: #2a9d8f;
+```
+
+> Note: If your color has a green, you might also set `$success`. If your palette has a red, you might set `$danger`
+
+## Lab - Create a Home Component
+
+1. In `movies/Home.js` create a `Home` **function** component. 
+2. Make it display the following text `The best movie website around.
+3. In `App.js` add a Route show the `Home` component at the path `/` 
+
+## Code Along - Adding a Header Component
+
+1. In `Header/Header
+
+## Lab - Sign Up a User
+
+## Code Along - Refactor SignUp Component
+
+### Code Along - Organize Axios Calls
+1. Move axios calls into `api/auth.js`
+
+### Code Along - Style SignUp Component w/ React Bootstrap
+
+### Code Along - Refactor Promise into Async & Await
+
+## Lab - Sign In a User
+
+## Code Along - Auto Sign In
+
+In `SignUp.js`
+
+## Lab - Change Password
+
+## Code Along - Sign Out
+
+## Code Along - AutoDismissAlert
+
+## Lab - Index Movies
+
+## Lab - Show Movie
+
+> Note: Don't worry about editing or deleting yet. You can only edit/delete movies you have created.
+
+## Code Along - Create Movie
+
+## Lab - Update Movie
+
+## Lab - Delete Movie
+
 
 ## About
 
@@ -177,13 +240,11 @@ export default AboutPage
 
 Developers should run these often!
 
+- `npm run start`: generates bundles, watches, and livereloads.
+- `npm run deploy`: builds and deploys main branch
 - `npm run nag`: runs code quality analysis tools on your code and complains.
 - `npm run make-standard`: reformats all your code in the JavaScript Standard
   Style.
-- `npm run start`: generates bundles, watches, and livereloads.
-- `npm run build`: place bundled styles and scripts where `index.html` can find
-    them
-- `npm run deploy`: builds and deploys main branch
 
 ## [License](LICENSE)
 

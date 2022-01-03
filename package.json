@@ -1,6 +1,6 @@
 {
-  "homepage": "https://git-name.github.io/repo-name",
-  "name": "react-auth-template",
+  "homepage": "https://git-name.github.io/react-auth",
+  "name": "react-auth",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
