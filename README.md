@@ -50,110 +50,117 @@ $info: #2a9d8f;
 ## Lab - Create a Home Component
 
 1. In `movies/Home.js` create a `Home` **function** component. 
-2. Make it display the following text `The best movie website around.
+2. Make it display the following text `"The best movie website around"`.
 3. In `App.js` add a Route show the `Home` component at the path `/` 
 
-## Code Along - Adding a Header Component
+## Auth Routes
 
-1. In `Header/Header
-
-## Lab - Sign Up a User
-
-## Code Along - Refactor SignUp Component
-
-### Code Along - Organize Axios Calls
-1. Move axios calls into `api/auth.js`
-
-### Code Along - Style SignUp Component w/ React Bootstrap
-
-### Code Along - Refactor Promise into Async & Await
-
-## Lab - Sign In a User
-
-## Code Along - Auto Sign In
-
-In `SignUp.js`
-
-## Lab - Change Password
-
-## Code Along - Sign Out
-
-## Code Along - AutoDismissAlert
-
-## Lab - Index Movies
-
-## Lab - Show Movie
-
-> Note: Don't worry about editing or deleting yet. You can only edit/delete movies you have created.
-
-## Code Along - Create Movie
-
-## Lab - Update Movie
-
-## Lab - Delete Movie
-
-
-## About
-
-This template is derived from GA Boston's [react-template](https://git.generalassemb.ly/ga-wdi-boston/react-template).
-Most of the development dependencies, such as linters, SCSS compiler, Webpack
-config, NPM scripts, etc in this repo come from there.
-
-It includes all the components and routes needed to sign up, sign in, change
-passwords, and sign out of an API built with either template linked above, with
-no need for modification.
-
-**NOTE**: You should customize the included components to suit you app! They're
-provided as a guide and a bare minimum of functionality and style. Consider
-changing the provided SCSS styles, modifying the auth code, improving the flash
-messages, etc.
-
-## Structure
-
-The top-level `App` component stores the currently authenticated
-user in state, as well as data related to the flash messages. `App` renders the
-`Header` component, and a list of routes, each of which render a component from
-`src/components`. The `src/api` directory has a component file, `auth.js`, which
-contains all the needed `axios` calls pertaining to authentication.
-
-You can follow this pattern in your app as well. For instance, if you are making
-an app that keeps track of books, you might want a `src/api/books.js`, which
-contains its own `axios` call pertaining to your books resource CRUD actions.
-Using a separate directory within `components` for each individual component you
-add makes it easy to locate and update components and has the added benefit of
-making it easy to create custom styles that apply to that specific component.
-To apply component specific styles, add a file to the component's directory such
-as `ComponentName.scss` and then import it directly into the component with
-`import './ComponentName.scss'`.  This will keep your styles modularized and
-make it easier to make changes at the component level.
-
-### Included Routes
-
-This template comes with a handful of front-end routes that display
+We will create a handful of front-end routes that display
 different components for user actions.
 
-| Endpoint         | Component | Must Be Signed In? |
-|------------------|-------------------|-------|
-| `/sign-up`       | `SignUp`    | No |
-| `/sign-in`       | `SignIn`    | No |
-| `/change-password` | `ChangePassword`  | Yes |
-| `/sign-out`        | `SignOut`   | Yes |
+| Endpoint           | Component        | Must Be Signed In? |
+| ------------------ | ---------------- | ------------------ |
+| `/sign-up`         | `SignUp`         | No                 |
+| `/sign-in`         | `SignIn`         | No                 |
+| `/change-password` | `ChangePassword` | Yes                |
+| `/sign-out`        | `SignOut`        | Yes                |
 
 There is no HTTP verb listed because these are all front-end routes handled by
 React. Some of these routes should not be available unless a user is signed in,
 so they will redirect to the `/` page if not signed in.
 
-## Features
 
-### `<AutoDismissAlert />` Component
+### Code Along - Adding a Header Component
 
-This template also already contains a component that displays user messages.
-Messages are configurable via redux actions.  This component can be found in
-`src/components/AutoDismissAlert/AutoDismissAlert.js`. **There is no need to add
-this component to your app. It is already required in `App`.**  A single
+# TODO 🚩
+1. In `Header/Header.js`
+
+### Lab - Sign Up a User
+
+Now it's your turn to write a SignUp component!
+
+As a team:
+1. Create a `function` component called `SignUp` in `auth/SignUp.js` (not a class component)
+2. in `App.js` add a route to show the `SignUp` component at the path `/sign-up`
+3. Set up three pieces of state for the `email`, `password`, and `passwordConfirmation`
+4. Create a form to enter the `email`, `password`, and `passwordConfirmation`
+5. When the form is submitted make a [POST /sign-up request](https://git.generalassemb.ly/seir-flex-831/library-api/blob/main/docs/authentication.md#post-sign-up) using axios
+
+**Bonus:**
+5. After a user is created, navigate to the home page.
+
+### Code Along - Refactor SignUp Component
+
+#### Code Along - Organize Axios Calls
+
+# TODO 🚩
+1. Move axios calls into `api/auth.js`
+
+#### Code Along - Style SignUp Component w/ React Bootstrap
+
+# TODO 🚩
+
+
+#### Code Along - Refactor Promise into Async & Await
+
+# TODO 🚩
+
+### Lab - Sign In a User
+
+Now it's your turn to write a SignIn component!
+
+As a team:
+
+1. Create a `function` component called `SignIn` in `auth/SignIn.js` (not a class component)
+2. in `App.js` add a route to show the `SignIn` component at the path `/sign-in`
+3. Set up two pieces of state for the `email` and `password`
+4. Create a bootstrap `Form` to enter the `email` and `password`
+5. When the form is submitted make a [POST /sign-in request](https://git.generalassemb.ly/seir-flex-831/library-api/blob/main/docs/authentication.md#post-sign-in) using axios
+6. After a user is signed in, navigate to the home page.
+
+**Bonus:** 
+7. After signing in, use the `setUser` function to store the `user`. 
+
+> Hint: You'll need to make sure to pass down the `setUser` function as a prop to `SignIn` in `App.js`
+
+### Code Along - Auto Sign In
+
+# TODO 🚩
+
+In `SignUp.js`
+
+### Lab - Change Password
+
+Now it's your turn to write a ChangePassword component!
+
+As a team:
+
+1. Create a `function` component called `ChangePassword` in `auth/ChangePassword.js` (not a class component)
+2. in `App.js` add a route to show the `ChangePassword` component at the path `/change-password`. :warning: Note: Make sure to pass down the `user` as a prop for their `token`.
+3. Set up two pieces of state for the `oldPassword` and `newPassword`
+4. Create a bootstrap `Form` to enter the `oldPassword` and `newPassword`
+5. When the form is submitted make a [PATCH /change-password request](https://git.generalassemb.ly/seir-flex-831/library-api/blob/main/docs/authentication.md#patch-change-password) using axios
+6. After the password is changed, navigate to the home page.
+
+**Bonus:**
+
+7. If the user isn't signed in, navigate to the home page.
+
+
+### Code Along - Sign Out
+
+Together we will create a SignOut component that makes an axios call to [POST /sign-out](https://git.generalassemb.ly/seir-flex-831/library-api/blob/main/docs/authentication.md#delete-sign-out). 
+
+# TODO 🚩
+
+### Code Along - AutoDismissAlert
+
+We will create a component that displays user messages.
+This component will be written in
+`src/components/AutoDismissAlert/AutoDismissAlert.js`. A single
 component instance is used to manage all alerts application-wide.
 
-The alert can be used by passing the `alertMsg` method to a rendered route.  The
+To display messages, we will create an `alertMsg` function together. The alert can be used by passing the `alertMsg` method to a rendered route. The
 `alertMsg` method expects an object with a `heading`, `message`, and a `variant` property.
 
 Use this component in conjunction with the `messages.js` file in the same
@@ -161,80 +168,33 @@ directory to create and manage all of your application messages in one place.
 
 The `variant` property must be a Bootstrap alert variant, as this component is merely a
 wrapper around the [react-bootstrap Alert
-component](https://react-bootstrap.github.io/components/alerts/).  The types it
-will accept are: 'primary', 'secondary', 'success', 'danger', 'warning', 'info',
-'light', and 'dark'.
+component](https://react-bootstrap.github.io/components/alerts/). The types it
+will accept are: `'primary'`, `'secondary'`, `'success'`, `'danger'`, `'warning'`, `'info'`,
+`'light'`, and `'dark'`.
 
- To change the duration of the message, replace `5000` with a value of your
- choice (in milliseconds) in this component's `useEffect` method.
+## Bonus: Authenticated Movies CRUD
 
-### `src/apiConfig.js`
+### Bonus: Lab - Index Movies
 
-Just like in
-[browser-template](https://git.generalassemb.ly/ga-wdi-boston/browser-template),
-this file will determine whether you're in a production or development
-environment and choose an API URL accordingly. Don't forget to replace the
-`production` URL with your deployed API's URL.
+# TODO 🚩
 
-### Bootstrap
 
-This template includes two different implementations of the classic Bootstrap
-library we know and love.
+### Bonus: Lab - Show Movie
 
-#### `bootstrap`
+> Note: Don't worry about editing or deleting yet. You can only edit/delete movies you have created.
 
-The first implementation of Bootstrap comes from the `bootstrap` npm package,
-and provides all of the normal Bootstrap classes and styling we were able to
-use with the `browser-template`. This package is included in the
-`src/index.scss` file at the very top of the file. That means JSX in this
-template can utilize Bootstrap classes like `btn`, `container`, `row`, etc.
+### Bonus: Code Along - Create Movie
 
-See an example below:
+# TODO 🚩
 
-```jsx
-import React from 'react'
+### Bonus: Lab - Update Movie
 
-const AboutPage = () => (
-  <div className="card">
-    <div className="card-body">
-      <h1 className="card-title">About Page</h1>
-      <p className="card-text">There is a Bootstrap card on this page!</p>
-    </div>
-  </div>
-)
+# TODO 🚩
 
-export default AboutPage
-```
+### Bonus: Lab - Delete Movie
 
-> Note: Remember to use `className` not `class` in your JSX!
+# TODO 🚩
 
-#### `react-bootstrap`
-
-In addition to the classic Bootstrap classes we can plug into our JSX, this
-template also comes with a special package called [`react-bootstrap`](https://react-bootstrap.github.io/).
-This package allows us to use special React components that have been pre-built
-according to the Bootstrap library.
-
-Import components from the `react-bootstrap` library, then use them just like
-regular components in your JSX!
-
-See an example below:
-
-```jsx
-import React from 'react'
-import Card from 'react-bootstrap/Card'
-
-const AboutPage = () => (
-  <Card>
-    <Card.Body>
-      <Card.Title>The About Page</Card.Title>
-      <Card.Text>There is a Bootstrap card on this page!</Card.Text>
-    </Card.Body>
-  </Card>
-)
-
-export default AboutPage
-```
 
 ## Tasks
 
