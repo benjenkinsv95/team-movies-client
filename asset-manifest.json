@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/team-movies-client/static/css/main.640e1e51.chunk.css",
+    "main.js": "/team-movies-client/static/js/main.f1724ed8.chunk.js",
+    "main.js.map": "/team-movies-client/static/js/main.f1724ed8.chunk.js.map",
+    "runtime-main.js": "/team-movies-client/static/js/runtime-main.36d84e06.js",
+    "runtime-main.js.map": "/team-movies-client/static/js/runtime-main.36d84e06.js.map",
+    "static/js/2.38b868f2.chunk.js": "/team-movies-client/static/js/2.38b868f2.chunk.js",
+    "static/js/2.38b868f2.chunk.js.map": "/team-movies-client/static/js/2.38b868f2.chunk.js.map",
+    "index.html": "/team-movies-client/index.html",
+    "static/css/main.640e1e51.chunk.css.map": "/team-movies-client/static/css/main.640e1e51.chunk.css.map",
+    "static/js/2.38b868f2.chunk.js.LICENSE.txt": "/team-movies-client/static/js/2.38b868f2.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.36d84e06.js",
+    "static/js/2.38b868f2.chunk.js",
+    "static/css/main.640e1e51.chunk.css",
+    "static/js/main.f1724ed8.chunk.js"
+  ]
+}
